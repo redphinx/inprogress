@@ -98,6 +98,8 @@ public class dbTests {
 		assertTrue(sucess);
 		db.showTables(stmt,"seriaka");
 	}
+	
+	
 }
 
 

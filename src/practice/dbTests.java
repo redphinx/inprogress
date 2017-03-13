@@ -37,14 +37,14 @@ public class dbTests {
 	@Test
 	public void testShowDatabases() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","seriaka","phinx93");
 		db.showDatabases(con);
 	}
 	
 	@Test
 	public void testShowDatabasesTables() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","seriaka","phinx93");
 		Statement stmt = db.selectDatabase(con, "coms309");
 		db.showDatabaseTables(stmt, "coms309");
 		assertTrue(2==2);
@@ -62,7 +62,7 @@ public class dbTests {
 	@Test
 	public void testCreateDatabase() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","seriaka","phinx93");
 		Statement stmt = con.createStatement();
 		boolean sucess = db.createDatabase(stmt, "imaDatabase");
 		assertTrue(sucess);
@@ -72,7 +72,7 @@ public class dbTests {
 	@Test
 	public void testDeleteDatabase() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","phinx93");
 		Statement stmt = con.createStatement();
 		boolean sucess = db.deleteDatabase(stmt, "imaDatabase");
 		assertTrue(sucess);
@@ -82,7 +82,7 @@ public class dbTests {
 	@Test
 	public void testCreateTable() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","phinx93");
 		Statement stmt = db.selectDatabase(con, "seriaka");
 		boolean sucess = db.createTable(stmt, "imaTable");
 		assertTrue(sucess);
@@ -92,7 +92,7 @@ public class dbTests {
 	@Test
 	public void testDeleteTable() throws SQLException{
 		start db = new start();
-		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","Reddev#93");
+		Connection con = DriverManager.getConnection("jdbc:mysql://jliedtke.com/","liedtke","phinx93");
 		Statement stmt = db.selectDatabase(con, "seriaka");
 		boolean sucess = db.deleteTable(stmt, "imaTable");
 		assertTrue(sucess);
